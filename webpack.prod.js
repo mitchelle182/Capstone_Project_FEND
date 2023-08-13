@@ -3,7 +3,7 @@ const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const WorkBoxPlugin =require("workbox-webpack-plugin");
 
 
 module.exports = {
@@ -36,7 +36,8 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename:'[name].css'
-        })
+        }), 
+        new WorkBoxPlugin.GenerateSW({})
     ]
 
 
