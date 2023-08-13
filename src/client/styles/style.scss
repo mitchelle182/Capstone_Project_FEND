@@ -17,16 +17,22 @@ body{
 // }
 
 .holder{
-
+   
+    
 }
 
 .hero {
-    background-color: #fffff8;
 
+   
 }
+
 
 .entry{
     background: rgba(59, 74, 107, .4);
+}
+
+#imageLocation {
+    width: 50%;
 }
 
 #entryHolder{
@@ -37,13 +43,7 @@ body{
 
 }
 
-#temp{
 
-}
-
-#content{
-
-}
 
 .headline {
 
@@ -52,6 +52,8 @@ body{
 
 }
 
+
+
 /*  Basic Styling To Override Default For Basic HTML Elements */
 label{
     display:block;
@@ -59,24 +61,27 @@ label{
 }
 
 input{
-    display:block;
+    display:inline-block;
     height: 60px;
     width: 320px;
-    
+    margin: 1rem;
     
     font-size: 20px;
 
-    border: none;
+    border:#3b4a6b;
 }
 
-button{
-  
+.button{
+    border-radius: 16px;
     background: #3b4a6b;
     color: #f0d43a;
     font-size: 16px;
-   
+    padding: 1rem;
     border: none;
     
+}
+button:hover {
+    background: #7c8eb5;
 }
 h1{
     font-size: 36px;
