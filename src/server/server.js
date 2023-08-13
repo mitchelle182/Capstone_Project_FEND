@@ -1,9 +1,15 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
+const WbApiKey = process.env.WB_APIKEY;
+const PbApiKey = process.env.PB_APIKEY;
+const gnUser = process.env.GN_USERNAME;
+
+const allReq = require('./allAPIrequests');
+
 // Require Express to run server and routes
 const express = require('express');
 
-// Personal API Keys for weatherbit and Pixabay
-const WbApiKey ='&key=e545dbbb08c84d41b6b60d8ceec06556';
-const PbApiKey ='38799204-4c6e25673848de4b78a4e6f26';
 
 // Start up an instance of app
 const app = express();
@@ -36,27 +42,11 @@ app.get('/', function (req, res){
 });
 
 
-app.post('/',  function (req, res){
-
-});
-
-
-//app.get('/all', getData);
-//function getData (req, res) {
-//     res.send(projectData);
-//     console.log(projectData);
-// }
+app.post('/weather', allReq.weatherbitInfo);
+app.post('/image', allReq.pixabayInfo);
+app.post('/location', allReq.geoNamesInfo);
 
 
-//app.post('/addNew', addNew);
-
-// function addNew (req, res) {
-//     projectData['temp'] = req.body.temp;
-//     projectData['date'] = req.body.date;
-//     projectData['feelings'] = req.body.feelings;
-   
-//     res.send(projectData);
-//     console.log(projectData);
-// }
+module.exports = server;
 
 
