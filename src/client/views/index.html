@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My Travel Planner</title>
+
+
+</head>
+ <body>
+
+  <header class="hero">
+    <h1>My Travel Planner</h1>
+    
+  </header>
+  <main>
+    
+  <section>
+    <div class ="holder tripLocation">
+      <label for="tripLocation">Where are you going? </label>
+      <input type="text" id="city" name="city" required placeholder="Enter city here">
+      <input type="text" id="country" name="country" required placeholder="Enter country here">
+    </div>
+    <div class ="holder tripDate">
+      <label for="tripDate">When are you going?</label>
+      <input type="text" id="tripDate" placeholder="Enter date YYYY-MM-DD">  
+    </div>
+    
+    <button id="generate" type = "submit"> Submit </button>
+  </section>  
+ <section>
+  <div class ="holder packing">
+    <label for="packing">What to pack:</label>
+    <textarea class= "myInput" id="packing" placeholder="Enter what to bring here" rows="9" cols="50"></textarea>
+    <button id="addList" type = "submit"> add packing list </button>
+  </div>
+ </section>
+  <section>
+    <figure>
+      <img id="imgLocation" src="" alt="" />
+    </figure>
+    <div id="tripSummary">
+      <div id="city"></div>
+      <div id="countdown"></div>
+      <div id="weather"></div>  
+      <div id="packList"></div>
+    </div>
+   
+    
+    <input type = "button" value = "Print" onclick = "window.print()" />
+  </section>
+  
+  </main>
+  <script>
+    // Check that service workers are supported
+    // if ('serviceWorker' in navigator) {
+    //     // Use the window load event to keep the page load performant
+    //     window.addEventListener('load', () => {
+    //         navigator.serviceWorker.register('/service-worker.js');
+    //     });
+    // }
+</script>
+
+
+</body>
+</html>
