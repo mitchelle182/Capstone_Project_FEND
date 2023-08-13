@@ -14,7 +14,7 @@
   </header>
   <main>
     
-  <section>
+  <section class="userInput">
     <div class ="holder tripLocation">
       <label for="tripLocation">Where are you going? </label>
       <input type="text" id="city" name="city" required placeholder="Enter city here">
@@ -25,28 +25,24 @@
       <input type="text" id="tripDate" placeholder="Enter date YYYY-MM-DD">  
     </div>
     
-    <button id="generate" type = "submit"> Submit </button>
+    <button class="button" id="generate" type = "submit"> Submit </button>
   </section>  
- <section>
-  <div class ="holder packing">
-    <label for="packing">What to pack:</label>
-    <textarea class= "myInput" id="packing" placeholder="Enter what to bring here" rows="9" cols="50"></textarea>
-    <button id="addList" type = "submit"> add packing list </button>
-  </div>
- </section>
+ 
   <section>
     <figure>
       <img id="imgLocation" src="" alt="" />
     </figure>
     <div id="tripSummary">
-      <div id="city"></div>
+      <h2>My trip summary:</h2>
+      <div id="location"></div>
       <div id="countdown"></div>
       <div id="weather"></div>  
-      <div id="packList"></div>
+      
     </div>
    
     
-    <input type = "button" value = "Print" onclick = "window.print()" />
+    <button class="button" type = "button" value = "Print" onclick = "window.print()">Print</button>
+    <button class="button" type="button" id="clearData" value="clear">Clear data</button>
   </section>
   
   </main>
