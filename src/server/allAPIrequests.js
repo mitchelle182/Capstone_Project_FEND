@@ -38,7 +38,3 @@ const pixabayInfo = async (city, country, PbApiKey) => {
         console.log("error", error);
     }
 };
-
-exports.geoNamesInfo =geoNamesInfo;
-exports.weatherbitInfo = weatherbitInfo;
-exports.pixabayInfo = pixabayInfo;

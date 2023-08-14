@@ -5,7 +5,7 @@ const WbApiKey = process.env.WB_APIKEY;
 const PbApiKey = process.env.PB_APIKEY;
 const gnUser = process.env.GN_USERNAME;
 
-const allReq = require('./allAPIrequests');
+const allAPIs = require('./allAPIrequests.js');
 
 // Require Express to run server and routes
 const express = require('express');
@@ -35,18 +35,25 @@ app.listen(8000, function (){
 });
 
 
-
 //TODO routes
 app.get('/', function (req, res){
     res.send('src/server/server.js');
 });
 
 
-app.post('/weather', allReq.weatherbitInfo);
-app.post('/image', allReq.pixabayInfo);
-app.post('/location', allReq.geoNamesInfo);
+app.post('/', async (req,res) =>{
+    const city = req.body.city;
+    const country = req.body.country;
+    const response = await allAPIs.geoNamesInfo(city, country, gnUser);
+    res.send(response);
+    console.log(response);
+});
 
 
-module.exports = server;
+    
+    
+
+
+module.exports = app;
 
 
