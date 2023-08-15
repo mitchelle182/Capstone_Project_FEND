@@ -18,8 +18,8 @@ const geoNamesInfo = async (city, country, gnUser) => {
    
 };
 //call Weatherbit
-const weatherbitInfo = async (city, WbApiKey) => {
-    const response = await fetch(`${weatherbit}key=${WbApiKey}&lat=${lat}&lon=${lng}`);
+const weatherbitInfo = async (lat, lng, WbApiKey) => {
+    const response = await fetch(`${weatherbit}?key=${WbApiKey}&lat=${lat}&lon=${lng}`);
     try {
         const data =await response.json();
    

@@ -41,15 +41,16 @@ app.get('/', function (req, res){
 });
 
 
+
 app.post('/', async (req,res) =>{
     const city = req.body.city;
     const country = req.body.country;
     const response = await allAPIs.geoNamesInfo(city, country, gnUser);
-    const { name, countryName, lat, lng } = response.geoNames[0];
-    const weatherResponse = await allAPIs.weatherbitInfo(city, WbApiKey);  
+    const { name, countryName, lat, lng } = response.geonames[0];
+    const weatherResponse = await allAPIs.weatherbitInfo(lat, lng, WbApiKey);  
     const pixabayResponse =await allAPIs.pixabayInfo(city, PbApiKey);
-    const { valid_date, weather, high_temp, low_temp }  = weatherResponse.weatherbit [0];
-    const { tags, largeImageURL, type } =  pixabayResponse.pixabay[0];
+    const { valid_date, weather, high_temp, low_temp }  = weatherResponse.data[0];
+    const { tags, largeImageURL, type } =  pixabayResponse.hits[0];
    
     res.send({
         location: {
@@ -57,6 +58,7 @@ app.post('/', async (req,res) =>{
             countryName,
         },
         weather: {
+            valid_date,
             weather,
             high_temp,
             low_temp,
