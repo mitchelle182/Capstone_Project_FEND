@@ -41,13 +41,7 @@ app.get('/', function (req, res){
 });
 
 
-app.post('/', async (req,res) =>{
-    const city = req.body.city;
-    const country = req.body.country;
-    const response = await allAPIs.geoNamesInfo(city, country, gnUser);
-    res.send(response);
-    console.log(response);
-});
+
 
 
     
