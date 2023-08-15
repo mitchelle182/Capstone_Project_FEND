@@ -4,21 +4,22 @@ async function performCallBack(event){
    
     
     let inputCity = document.getElementById('city').value;
-    let inputCountry = document.getElementById('country').value;
+    let inputDate = document.getElementById('date').value;
     
     
     console.log ("input submitted");
     
-      const response1 = await postLocation(inputCity, inputCountry);
-    
-      console.log(response1);
+      const response1 = await postLocation(inputCity);
+      const response2 = await postWeather(inputDate);
+      const response3 = await postImage(inputCity);
+      console.log(response1, response2, response3);
       //updateUI();
 }
 
 
 //send to geoNames data to backend 
-const postLocation = async (city, country)=>{
-  const data = {city, country};
+const postLocation = async (city)=>{
+  const data = {city};
   const response = await fetch('http://localhost:8000/', {
   method: 'POST', 
   
@@ -40,8 +41,8 @@ const postLocation = async (city, country)=>{
 
 
 //send to backend
-const postWeather = async (city, country)=>{
-    const data = {city, country}
+const postWeather = async (city, date)=>{
+    
     const response = await fetch('http://localhost:8000/', {
     method: 'POST', 
   
@@ -61,7 +62,7 @@ const postWeather = async (city, country)=>{
 
 
 //send to backend
-const imageData = async (city, country)=>{
+const postImage = async (city, country)=>{
 
     const response = await fetch('http://localhost:8000/', {
     method: 'POST', 
@@ -82,14 +83,14 @@ const imageData = async (city, country)=>{
 
 
 
+export { performCallBack};
 
 
-// let inputDate = document.getElementById('tripDate').value;
 // let currentDate = Date.now();  
 // let daysLeft = currentDate - inputDate;
 //    // let d = new Date();
 //   // let newDate = d.getMonth()+1+ '.' + d.getDate()+'.'+ d.getFullYear();
-// let weather = await (weatherData);
+
 // /* Function to update UI*/
 // const updateUI = () => {
    
@@ -103,5 +104,5 @@ const imageData = async (city, country)=>{
  
 
 
-export { performCallBack};
+
 
