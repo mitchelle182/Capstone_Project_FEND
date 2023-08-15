@@ -14,19 +14,23 @@
   </header>
   <main>
     
-  <section class="userInput">
-    <div class ="holder tripLocation">
-      <label for="tripLocation">Where are you going? </label>
+  
+    <form>
+    <div class ="holder city">
+      <label for="city">Where are you going? </label>
       <input type="text" id="city" name="city" required placeholder="Enter city here">
-      <input type="text" id="country" name="country" required placeholder="Enter country here">
+      
     </div>
-    <div class ="holder tripDate">
-      <label for="tripDate">When are you going?</label>
-      <input type="text" id="tripDate" placeholder="Enter date YYYY-MM-DD">  
+    <div class ="holder date">
+      <label for="date">When are you going?</label>
+      <input type="text" id="date" placeholder="Enter date YYYY-MM-DD">  
     </div>
+    <input class="button" type="reset" value="Reset" />
+    <input class="button" id="generate" value="Submit" type="submit" />
+  </form>
     
-    <button class="button" id="generate" type = "submit"> Submit </button>
-  </section>  
+
+   
  
   <section>
     <figure>
@@ -42,7 +46,7 @@
    
     
     <button class="button" type = "button" value = "Print" onclick = "window.print()">Print</button>
-    <button class="button" type="button" id="clearData" value="clear">Clear data</button>
+    
   </section>
   
   </main>
