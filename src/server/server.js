@@ -29,7 +29,7 @@ app.use(express.static('dist'));
 console.log(__dirname);
 
 // Setup Server
-port = 8000;
+const port = 8000;
 app.listen(8000, function (){
     console.log('Server running on port 8000!');
 });
