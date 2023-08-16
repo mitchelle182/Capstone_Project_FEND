@@ -23,7 +23,7 @@
     </div>
     <div class ="holder date">
       <label for="date">When are you going?</label>
-      <input type="text" id="date" placeholder="Enter date YYYY-MM-DD">  
+      <input type="text" id="date" placeholder="Enter date">  
     </div>
     <input class="button" type="reset" value="Reset" />
     <input class="button" id="generate" value="Submit" type="submit" />
@@ -34,13 +34,13 @@
  
   <section>
     <figure>
-      <img id="imgLocation"/>
+      <img id="imgLocation" class="img-responsive" alt=""/>
     </figure>
     <div id="tripSummary">
       <h2>My trip summary:</h2>
-      <div id="location"></div>
-      <div id="tripDate"></div>
-      <div id="weather"></div>  
+      <div class="summary" id="location"></div>
+      <div class="summary" id="tripDate"></div>
+      <div class="summary" id="weather"></div>  
       
     </div>
    
@@ -51,13 +51,13 @@
   
   </main>
   <script>
-    // Check that service workers are supported
-    // if ('serviceWorker' in navigator) {
-    //     // Use the window load event to keep the page load performant
-    //     window.addEventListener('load', () => {
-    //         navigator.serviceWorker.register('/service-worker.js');
-    //     });
-    // }
+    //Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+        });
+    }
 </script>
 
 
