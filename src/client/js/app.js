@@ -5,13 +5,12 @@ async function performCallBack(event){
     event.preventDefault();
     let inputCity = document.getElementById('city').value;
     let inputDate = document.getElementById('date').value;
-    let d = new Date();
-    let newDate = d.getMonth()+1+ '.' + d.getDate()+'.'+ d.getFullYear();
+   
     console.log ("input submitted");
     
     const response = await postLocation(inputCity, inputDate);
     console.log(response);
-    let image = document.getElementById('imgLocation');
+    let image = document.querySelector('img');
     let cityName = response.location.name;
     let countryName = response.location.countryName;
     let weather = response.weather.high_temp;
@@ -19,13 +18,11 @@ async function performCallBack(event){
     const src = response.photo.largeImageURL; 
     console.log(src);
     console.log(image);
-    
-    document.getElementById('location').innerHTML = `Your trip to ` + `${cityName}, ${countryName}`;
-    document.getElementById('weather').innerHTML = `It is currrently ` + `${weather} degrees Celsius, with ${weatherDesc}.` ;
+    document.getElementById('imgLocation').src = src;
+    document.getElementById('location').innerHTML = `You have an upcoming trip to ` + `${cityName}, ${countryName}!`;
+    document.getElementById('weather').innerHTML = `It is currently ` + `${weather} degrees Celsius, with ${weatherDesc} at your destination.` ;
     document.getElementById('tripDate').innerHTML = `You will be leaving on ` + inputDate;
-    
-    //document.getElementById('imgLocation').append();
-    //updateUI();
+
 }
 
 
