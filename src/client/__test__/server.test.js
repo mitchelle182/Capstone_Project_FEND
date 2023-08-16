@@ -1,14 +1,10 @@
 
 
-
-// import request from 'supertest';
-
 const request = require('supertest');
-import {app} from './server/server';
+const app = require('../../server/server.js');
 
 describe('server', function () {
   it('loads', function (done) {
-    request(app).get('/').send();
-    expect(response.statusCode).toBe(200, done);
+    request(app).get('/').expect(200, done);
   });
 });
