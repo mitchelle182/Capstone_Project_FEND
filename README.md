@@ -1,7 +1,7 @@
 # FEND Capstone - Travel App
 The Capstone Travel App project is to demonstrate how to connect to multiple APIs using asynchronous Javascript and a local server. Webpack and multiple dependencies were also used.
 ## Webpack and dependencies
-The dependencies for this project are listed on the package.json file. For devDependencies, please input in the terminal: npm i -D name-of-dependency. For other dependencies such as express, input in the terminal npm install express. 
+The dependencies for this project are listed on the package.json file. For devDependencies, please input in the terminal: ```npm i -D name-of-dependency```. For other dependencies such as express, input in the terminal ```npm install express```. 
 ## APIs used
 There is a total of three API's used for this project. Because it is a travel app, we needed APIs that has geolocation capabilities, weather forecasting, and image collections. The following API's have been used: GeoNames for geolocation, Weatherbit for weather forecasting, and Pixabay for its collection of stock images. These APIs depend on the other to show information to the user properly. For example, for the right image to show up on the web page, Pixabay needs information from Geonames like the name of the city that was added by the user. For the weather, Weatherbit also needs information from Geonames like latitude and longitude. The API keys for each site are found on the dotenv file and can be changed to developer's own API keys, if necessary. 
 ## How to start the app
